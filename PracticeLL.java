@@ -11,6 +11,7 @@ public class PracticeLL {
         ll.addHead(32);
 
         ll.print();
+        //Fine
 //        System.out.println(ll.size);
 
     }

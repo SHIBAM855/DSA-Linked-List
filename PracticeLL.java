@@ -7,12 +7,12 @@ public class PracticeLL {
         ll.add(21);
         ll.add(32);
         ll.add(43);
-        ll.addHead(1);
-        ll.addHead(32);
+        ll.add(54);
+//        ll.addHead(1);
+//        ll.addHead(32);
+        ll.insertAt(4,34);
 
         ll.print();
-        //Fine
-//        System.out.println(ll.size);
 
     }
 }
@@ -35,16 +35,17 @@ class LinkedList1{
 
         if(head==null){
             head=node;
+            tail=node;
             size++;
             return;
         }
 
-        Node1 currentNode=head;
-        while (currentNode.next!=null){
-            currentNode=currentNode.next;
+
+        while (tail.next!=null){
+            tail=tail.next;
         }
 
-        currentNode.next=node;
+        tail.next=node;
         //tail=node;
         size++;
     }
@@ -56,12 +57,23 @@ class LinkedList1{
         head=node2;
         size++;
     }
-//    public void addTail(int data){
-//
-//        //Node1 node2 =new Node1(data);
-//        System.out.println(tail.data);
-//
-//    }
+    public void insertAt(int index,int data){
+
+        Node1 node2 =new Node1(data);
+
+        Node1 traverse=head;
+
+        //if this two line wrote in side loop then it recersively run node2.next=traverse.next traverse.next=node2;
+        for(int i=1;i<index-1;i++){
+            traverse=traverse.next;
+
+        }
+
+        node2.next=traverse.next;
+        traverse.next=node2;
+
+
+    }
     public void print(){
         Node1 current=head;
         while (current!=null){

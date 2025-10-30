@@ -10,7 +10,7 @@ public class PracticeLL {
         ll.add(54);
 //        ll.addHead(1);
 //        ll.addHead(32);
-        ll.insertAt(4,34);
+        ll.insertAt(8,34);
 
         ll.print();
 
@@ -61,6 +61,13 @@ class LinkedList1{
 
         Node1 node2 =new Node1(data);
 
+        if(index<0 || index>size){
+            throw  new RuntimeException("You Can't add this position");
+        }
+        if(index==0 || index==size){
+            add(data);
+            return;
+        }
         Node1 traverse=head;
 
         //if this two line wrote in side loop then it recersively run node2.next=traverse.next traverse.next=node2;
